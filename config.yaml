@@ -1,13 +1,13 @@
 import:
   - display/desktop/xsetroot
-#- display/desktop/feh
-  - display/color/wombat
+# - display/desktop/feh
+  - display/color/nikki
   - display/notice
   - display/client
   - display/tags
   - display/status/music/mpd
   - display/status/volume/amixer
-  - display/status/storage/df
+  - display/status/storage/dfnikki
   - display/status/system/loadavg
   - display/status/time
   - control/mouse
@@ -46,19 +46,7 @@ display:
     rule: |
       /.*/ -> 60+40
 
-  control:
-    keyboard_action:
-      ${mod}-Enter: launch_terminal
-      ${mod}-f: launch_browser
-      ${mod}-n: launch_filer
-      ${mod}-v: launch_editor
-
   client:
     - /\b(xconsole|alsamixer|XMMS|Sonata)\b/ : 1
-    - /^chromium:Chromium:Chromium Options$/ : '~'
-    - /^chromium:Chromium:Task Manager/ : '~'
-    - /Save a Bookmark on Delicious/ : '~'
-    - /^xmag/ : '~'
     - /Applet Viewer/ : '~'
     - /^pidgin:|:WeeChat\b/ : chat
-    - /Meld$/ : merge

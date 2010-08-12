@@ -91,7 +91,7 @@ display:
             CONFIG['display']['color']['notice']
           end
 
-        [color, '(mpd)', song_name].compact
+        [color, song_name].compact
 
       mouse_action:
         left_click: pause_current_song_toggle

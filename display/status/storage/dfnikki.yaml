@@ -1,0 +1,25 @@
+import:
+  - display/status
+
+display:
+  status:
+    df:
+      refresh: 600 # 10 minutes
+
+      script: |
+        def usage disk
+          `df -h #{disk} || df #{disk}`
+        end
+
+      label: |
+        freeRoot, dummy, pathRoot = usage('/').split.last(3)
+        freeHome, dummy, pathHome = usage('~').split.last(3)
+        [pathRoot, freeRoot, pathHome, freeHome]
+
+      mouse_action:
+        left_click: show_df_stats
+
+control:
+  action:
+    show_df_stats: |
+      dialog Status['df'].usage(nil)
