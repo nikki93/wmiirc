@@ -128,6 +128,7 @@ control:
     XF86AudioPrev: play_previous_song
     XF86AudioNext: play_next_song
     XF86AudioStop: stop_playing_song
+    ${mod}-m: play_song_from_menu
     #${mod}-Prior: play_previous_song
     #${mod}-Next: play_next_song
     #${mod}-Return: pause_current_song_toggle

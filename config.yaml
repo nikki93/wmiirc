@@ -1,15 +1,17 @@
 import:
   - display/desktop/xsetroot
 # - display/desktop/feh
+
   - display/color/nikki
+
   - display/notice
   - display/client
   - display/tags
+
   - display/status/music/mpd
-  - display/status/volume/amixer
-  - display/status/storage/dfnikki
   - display/status/system/loadavg
   - display/status/time
+
   - control/mouse
   - control/keyboard/nikki
   - control/keyboard/nikki/arrange_by_number
@@ -39,7 +41,7 @@ prefer:
 display:
   bar: bottom
   font: "-*-fixed-medium-r-*-*-11-*-*-*-*-*-*-*"
-  border: 1
+  border: 2
 
   column:
     mode: default
