@@ -1,0 +1,64 @@
+import:
+  - display/desktop/xsetroot
+#- display/desktop/feh
+  - display/color/wombat
+  - display/notice
+  - display/client
+  - display/tags
+  - display/status/music/mpd
+  - display/status/volume/amixer
+  - display/status/storage/df
+  - display/status/system/loadavg
+  - display/status/time
+  - control/mouse
+  - control/keyboard/nikki
+  - control/keyboard/nikki/arrange_by_number
+  - control/keyboard/nikki/arrange
+  - control/keyboard/nikki/client
+  - control/keyboard/nikki/detach
+  - control/keyboard/nikki/focus_by_letter
+  - control/keyboard/nikki/focus_by_number
+  - control/keyboard/nikki/focus
+  - control/keyboard/nikki/group
+  - control/keyboard/nikki/launch
+  - control/keyboard/nikki/layout_by_number
+  - control/keyboard/nikki/layout
+  - control/keyboard/nikki/menu
+  - control/keyboard/nikki/move_by_number
+  - control/keyboard/nikki/move
+  - control/keyboard/nikki/swap_by_number
+  - control/keyboard/nikki/swap
+  - control/keyboard/nikki/zoom
+
+prefer:
+  terminal: urxvt
+  browser: firefox
+  editor: gvim
+  filer: thunar
+
+display:
+  bar: bottom
+  font: "-*-fixed-medium-r-*-*-11-*-*-*-*-*-*-*"
+  border: 1
+
+  column:
+    mode: default
+    rule: |
+      /.*/ -> 60+40
+
+  control:
+    keyboard_action:
+      ${mod}-Enter: launch_terminal
+      ${mod}-f: launch_browser
+      ${mod}-n: launch_filer
+      ${mod}-v: launch_editor
+
+  client:
+    - /\b(xconsole|alsamixer|XMMS|Sonata)\b/ : 1
+    - /^chromium:Chromium:Chromium Options$/ : '~'
+    - /^chromium:Chromium:Task Manager/ : '~'
+    - /Save a Bookmark on Delicious/ : '~'
+    - /^xmag/ : '~'
+    - /Applet Viewer/ : '~'
+    - /^pidgin:|:WeeChat\b/ : chat
+    - /Meld$/ : merge

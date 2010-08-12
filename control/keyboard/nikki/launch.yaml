@@ -1,0 +1,9 @@
+import:
+  - control/keyboard/common/launch
+
+control:
+  keyboard_action:
+    ${mod}-Shift-Return: launch_terminal
+    ${mod}-Shift-f: launch_browser
+    ${mod}-Shift-n: launch_filer
+    ${mod}-Shift-v: launch_editor

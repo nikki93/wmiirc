@@ -1,0 +1,31 @@
+import:
+  - control/keyboard/common
+
+control:
+  keyboard:
+
+    ##
+    # Shortcut prefixes.
+    #
+    mod:     Mod1
+    move:    Mod1-Shift
+
+    swap:    Mod1-r
+    group:   Mod1-g
+    layout:  Mod1-z
+    arrange: Mod1-Shift-z
+    view:    Mod1-Shift-b
+
+    ##
+    # Direction keys.
+    #
+    up:    k
+    down:  j
+    left:  h
+    right: l
+
+    ##
+    # Sequence keys.
+    #
+    prev: b
+    next: n
