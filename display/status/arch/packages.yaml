@@ -28,4 +28,6 @@ display:
 control:
   action:
     show_arch_updates: |
-      dialog `pacman -Qu`
+      if !(up = `pacman -Qu`).empty?
+        dialog up
+      end
