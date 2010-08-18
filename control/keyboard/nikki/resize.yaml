@@ -1,0 +1,14 @@
+import:
+  - control/action/resize
+
+control:
+  keyboard_action:
+    ${resize}-${up}: grow_client_up
+    ${resize}-${down}: grow_client_down
+    ${resize}-${left}: grow_client_left
+    ${resize}-${right}: grow_client_right
+
+    ${resize}-${aup}: shrink_client_up
+    ${resize}-${adown}: shrink_client_down
+    ${resize}-${aleft}: shrink_client_left
+    ${resize}-${aright}: shrink_client_right

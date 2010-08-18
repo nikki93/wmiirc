@@ -1,0 +1,31 @@
+import:
+  - display/status
+
+display:
+  status:
+    archpackages:
+      refresh: 3600 #Run every hour.
+
+      label: |
+        repos = (`pacman -Qu | wc -l`.split.last(1))[0]
+
+        color = 
+          if repos.to_f > 20
+            CONFIG['display']['color']['notice']
+          else
+            CONFIG['display']['color']['normal']
+          end
+
+        if repos == "0"
+          repos = "up to date"
+        end
+
+        [color, "repos:", repos]
+
+      mouse_action:
+        left_click: show_arch_updates
+
+control:
+  action:
+    show_arch_updates: |
+      dialog `pacman -Qu`

@@ -8,8 +8,12 @@ import:
   - display/client
   - display/tags
 
+  - display/status/spacer
+  - display/status/arch/packages
   - display/status/music/mpd
+  - display/status/volume/amixer
   - display/status/system/loadavg
+  - display/status/power/acpi
   - display/status/time
 
   - control/mouse
@@ -31,24 +35,36 @@ import:
   - control/keyboard/nikki/swap_by_number
   - control/keyboard/nikki/swap
   - control/keyboard/nikki/zoom
+  - control/keyboard/nikki/resize
 
 prefer:
   terminal: urxvt
   browser: firefox
   editor: gvim
   filer: thunar
+  tray: witray
+  music: urxvt -e ncmpcpp
 
 display:
   bar: bottom
-  font: "-*-fixed-medium-r-*-*-11-*-*-*-*-*-*-*"
+  font: "xft:DejaVu Sans Mono-11:dpi=81"
   border: 2
 
   column:
     mode: default
     rule: |
-      /.*/ -> 60+40
+      /gimp/ -> 17+80+10
+      /.*/ -> 62+38
 
   client:
-    - /\b(xconsole|alsamixer|XMMS|Sonata)\b/ : 1
+    - /witray/ : '/./'
     - /Applet Viewer/ : '~'
-    - /^pidgin:|:WeeChat\b/ : chat
+    - /gimp.*/ : 'gimp'
+
+  status:
+    acpi:
+      battery: BAT
+
+script:
+  - after: |
+      launch CONFIG['prefer']['tray']

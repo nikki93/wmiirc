@@ -50,7 +50,7 @@ display:
         def color
           case state
             when "charged" then CONFIG['display']['color']['normal']
-            when "charging" then CONFIG['display']['color']['focus']
+            when "charging" then CONFIG['display']['color']['normal']
             when "discharging" then case level
                 when :critical then CONFIG['display']['color']['error']
                 when :low then CONFIG['display']['color']['notice']
@@ -76,8 +76,8 @@ display:
         if present?
           symbol = case state
             when "charged" then "="
-            when "charging" then "^"
-            when "discharging" then "v"
+            when "charging" then "+"
+            when "discharging" then "-"
             else "?"
           end
           xmessage = message
@@ -85,7 +85,7 @@ display:
             `xkbbell -force`
             dialog xmessage
           end
-          [color, symbol, [percent,99].min.to_s+'%', symbol]
+          [color, [percent,99].min.to_s+'%', symbol]
         end
 
       mouse_action:

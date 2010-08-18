@@ -7,3 +7,4 @@ control:
     ${mod}-Shift-f: launch_browser
     ${mod}-Shift-n: launch_filer
     ${mod}-Shift-v: launch_editor
+    ${mod}-Shift-m: launch_music

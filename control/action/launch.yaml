@@ -39,3 +39,6 @@ control:
 
     launch_editor: |
       launch CONFIG['prefer']['editor']
+
+    launch_music: |
+      launch CONFIG['prefer']['music']

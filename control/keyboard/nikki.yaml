@@ -9,6 +9,7 @@ control:
     #
     mod:     Mod1
     move:    Mod1-Shift
+    resize:  Mod1-Control
 
     swap:    Mod1-r
     group:   Mod1-g
@@ -19,13 +20,22 @@ control:
     ##
     # Direction keys.
     #
-    up:    k
-    down:  j
-    left:  h
-    right: l
+    up:     k
+    down:   j
+    left:   h
+    right:  l
+
+    aup:    i
+    adown:  u
+    aleft:  y
+    aright: o
 
     ##
     # Sequence keys.
     #
     prev: b
     next: n
+
+  keyboard_action:
+    ${mod}-Shift-q: quit
+    ${mod}-Shift-r: reload

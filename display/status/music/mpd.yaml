@@ -50,6 +50,16 @@ display:
           refresh
         end
 
+        def play_song_from_click_menu
+          songs = `mpc playlist`.split("\n")
+          if str = click_menu(songs)
+            index = songs.index str
+            # MPD uses natural 1..N numbering
+            system "mpc play #{index + 1}"
+          end
+          refresh
+        end
+
         def pause!
           if @mpd.stopped?
             @mpd.play
@@ -80,7 +90,7 @@ display:
         if song = @mpd.current_song
           artist    = song.artist
           title     = song.title || (f = song.file and File.basename(f))
-          song_name = [artist, title].compact.join(': ')
+          song_name = [artist, title].compact.join(' - ')
         end
 
         color =
@@ -98,7 +108,7 @@ display:
         right_click: stop_playing_song
         wheel_up: play_previous_song
         wheel_down: play_next_song
-        wheel_click: play_song_from_menu
+        wheel_click: play_song_from_click_menu
 
 control:
   action:
@@ -117,6 +127,9 @@ control:
     play_song_from_menu: |
       Status['mpd'].play_song_from_menu
 
+    play_song_from_click_menu: |
+      Status['mpd'].play_song_from_click_menu
+
     load_playlist_from_menu: |
       Status['mpd'].load_playlist_from_menu
 
@@ -125,8 +138,8 @@ control:
 
   keyboard_action:
     XF86AudioPlay: pause_current_song_toggle
-    XF86AudioPrev: play_previous_song
-    XF86AudioNext: play_next_song
+    ${mod}-Home: play_previous_song
+    ${mod}-End: play_next_song
     XF86AudioStop: stop_playing_song
     ${mod}-m: play_song_from_menu
     #${mod}-Prior: play_previous_song

@@ -1,0 +1,8 @@
+import:
+  - display/status
+
+display:
+  status:
+    spacer:
+      refresh: 7777
+      label: ""
