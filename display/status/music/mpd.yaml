@@ -93,15 +93,15 @@ display:
           song_name = [artist, title].compact.join(' - ')
         end
 
-        color =
+        icon =
           if @mpd.stopped?
-            song_name = nil
-            nil
+            "x"
           elsif @mpd.paused?
-            CONFIG['display']['color']['notice']
+            #CONFIG['display']['color']['notice']
+            "="
           end
 
-        [color, song_name].compact
+        [icon, song_name].compact
 
       mouse_action:
         left_click: pause_current_song_toggle

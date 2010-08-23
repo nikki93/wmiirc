@@ -3,6 +3,7 @@ import:
 
 display:
   status:
-    spacer:
+    #The period is to make it appear before any other '0-' things.
+    .spacer:
       refresh: 7777
       label: ""
