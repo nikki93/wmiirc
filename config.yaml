@@ -53,12 +53,13 @@ display:
   column:
     mode: default
     rule: |
-      /gimp/ -> 17+80+10
+      /gimp/ -> 12+88+17 #Original: 10+73+17
       /.*/ -> 62+38
 
   client:
     - /witray/ : '/./'
     - /Applet Viewer/ : '~'
+    - /feh/ : '~'
     - /gimp.*/ : 'gimp'
 
   status:
