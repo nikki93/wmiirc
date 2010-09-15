@@ -1,6 +1,6 @@
 import:
   - display/desktop/xsetroot
-# - display/desktop/feh
+  - display/desktop/feh
 
   - display/color/nikki
 
